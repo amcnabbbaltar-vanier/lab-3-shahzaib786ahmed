@@ -16,12 +16,10 @@ public class GunComponent : MonoBehaviour
         isCharging = true;
         chargeTime = 0f;
     }
-    
     if (Input.GetButton("Fire1") && isCharging) {
         chargeTime += Time.deltaTime;
         chargeTime = Mathf.Clamp(chargeTime, 0f, maxChargeTime);
     }
-
     if (Input.GetButtonUp("Fire1") && isCharging) {
         ShootBullet();
         isCharging = false;
